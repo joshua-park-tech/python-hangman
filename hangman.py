@@ -6,17 +6,21 @@ app.setSticky("news")
 app.setExpand("both")
 app.setFont(20)
 
+global word
 words = ["hanging", "human", "pneumonoultramicroscopicsilicovolcanoconiosis", "supercalifragilisticexpialidocious, "]
 
 
 def start(btn):
     stuff = random.choice(words)
+    app.setTextArea("title", stuff)
     print(stuff)
 
 def press(btn):
     app.playSound("roblox-death-sound-effect.wav")
 
 if __name__ == "__main__":
+    app.addTextArea("title", "")
+
     app.addButton("start", start)
     app.addButton("A", press, 1, 0)
     app.addButton("B", press, 1, 2)
@@ -44,9 +48,6 @@ if __name__ == "__main__":
     app.addButton("X", press, 8, 4)
     app.addButton("Y", press, 9, 0)
     app.addButton("Z", press, 9, 2)
-
-
-
 
     app.go()
 
